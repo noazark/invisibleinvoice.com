@@ -6,7 +6,7 @@
 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script>
 			$(function () {
-				$('#invoice')
+				$('#invoice, #credit')
 					.attr('unselectable', 'on')
 					.css('user-select', 'none')
 					.on('selectstart', false)
@@ -21,7 +21,8 @@
 		<section id="invoice" unselectable="on">
 			<h1>This is an invoice</h1>
 			you owe me $1,000,000.00
-			<button>pay here</button>
+			<button onclick="alert('If this were real, you\'d be taken to a payment page.')">pay</button>
+			<button onclick="window.print()">print</button>
 		</section>
 		<p>
 			This is an example of how to <i>not</i> make an invoice :)
