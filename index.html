@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Invisible Invoice</title>
+		<link rel="stylesheet" type="text/css" media="print" href="print.css" />
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			$(function () {
+				$('#invoice')
+					.attr('unselectable', 'on')
+					.css('user-select', 'none')
+					.on('selectstart', false)
+					.bind('copy paste',function(e) {
+						e.preventDefault()
+						return false
+					})
+			})
+		</script>
+	</head>
+	<body>
+		<section id="invoice" unselectable="on">
+			<h1>This is an invoice</h1>
+			you owe me $1,000,000.00
+			<button>pay here</button>
+		</section>
+		<p>
+			This is an example of how to <i>not</i> make an invoice :)
+		</p>
+	</body>
+</html>
